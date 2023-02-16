@@ -1,8 +1,8 @@
 <!--
 Mobile web development 
 Template for General purpose html5 page with JQuery Mobile
-Created by: Sabbir Ahmed, Hyunjin Kim
-email:      sahmed@conestogac.on.ca, Hkim1595@conestogac.on.ca
+Created by: Hyunjin Kim
+email:      Hkim1595@conestogac.on.ca
 -->
 
 <!DOCTYPE html>
@@ -14,19 +14,29 @@ email:      sahmed@conestogac.on.ca, Hkim1595@conestogac.on.ca
         <script src="js/lib/jquery-2.1.4.js"></script>
         <!--jQuery Mobile-->
         <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!-- data access layer -->
+        <script src="js/HJKDAL.js"></script>
+        <!-- database -->
+        <script src="js/HJKdatabase.js"></script>
+        <!-- facade -->
+        <script src="js/HJKfacade.js"></script>
+        <!-- global -->
+        <script src="js/HJKglobal.js"></script>
+        <!-- functions -->
+        <script src="js/HJKutil.js"></script>
         <!--jQuery Mobile stylesheet-->
         <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
         <!--our scripts-->
         <script src="js/myscript.js"></script>
         <!--our styles-->
-        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="stylesheet" href="css/HJKmystyle.css">
         <link rel="icon" href="img/HJK-image.png">
 
     </head>
     <body>
         <div id="HJKHomePage" data-role="page">
             <header data-role="header" data-position="fixed" data-theme="a">
-                <h1>HJK Feedback A1</h1>
+                <h1>HJK Feedback A2</h1>
                 <!-- Navigation bar -->
                 <div data-role="navbar" data-icompos="top" >
                     <ul id="navBar1">
@@ -48,8 +58,8 @@ email:      sahmed@conestogac.on.ca, Hkim1595@conestogac.on.ca
 
             <section data-role="content">
                 <!-- main page -->
-                <h1>Hyunjin Kim's Feedback A1 App</h1>
-                <p>Welcome to the Hyunjin Kim's Feedback A1 app.
+                <h1>Hyunjin Kim's Feedback A2 App</h1>
+                <p>Welcome to the Hyunjin Kim's Feedback A2 app.
                     A prototype designed for mobile programming class. This is the first iteration of the app to keep track of different places you visited along with your reviews.</p>
                 <img src="img/cat.jpg" class="center-image"/>
                 <P>Please feel free to contact me if you have any suggestions!</P>
@@ -95,14 +105,39 @@ email:      sahmed@conestogac.on.ca, Hkim1595@conestogac.on.ca
                     <label for="businessName">Business Name:</label>
                     <input type="text" id="businessName" name="businessName">
 
+                    <label for="nationality" name="nationality">Type:</label>
+                    <select name="nationality" id="nationality">
+                        <option value="Other">Other</option>
+                        <option value="Canadian">Canadian</option>
+                        <option value="Asian">Asian</option>
+                    </select>
+
                     <label for="email">Reviewer Email:</label>
                     <input type="text" id="email" name="email">
 
                     <label for="comment">Reviewer Comments:</label>
                     <textarea id="comment" name="comment"></textarea>
 
-                    <label for="rating">Overall Ratings(1-100):</label>
+                    <label for="reviewDate">Review date:</label>
+                    <input type="date" id="reviewDate" name="reviewDate"
+                           value="dd------yyyy">
+
+                    <label for="checkRating">Do you want to add your ratings?</label><br>
+                    <input type="checkbox" id="checkRating" name="checkRating" value="Boat">
+
+                    <div class="rating-form">
+                    <label for="foodQualityRating">Food Quality (0-5):</label>
+                    <input type="number" id="foodQualityRating" name="foodQualityRating">
+
+                    <label for="serviceRating">Service (0-5):</label>
+                    <input type="number" id="serviceRating" name="serviceRating">
+
+                    <label for="valueRating">Value (0-5):</label>
+                    <input type="number" id="valueRating" name="valueRating">
+
+                    <label for="rating">Overall Ratings(calculated):</label>
                     <input type="text" id="rating" name="rating">
+                    </div>
                 </form>
                 <button type="submit" form="form-feedback" class="ui-btn-active" data-inline="true" value="Submit" id="addFeedbackBtn" name="addFeedbackBtn">Save</button>
             </section>
