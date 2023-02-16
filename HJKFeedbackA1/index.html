@@ -1,0 +1,309 @@
+<!--
+Mobile web development 
+Template for General purpose html5 page with JQuery Mobile
+Created by: Sabbir Ahmed, Hyunjin Kim
+email:      sahmed@conestogac.on.ca, Hkim1595@conestogac.on.ca
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>jQuery Mobile app template</title>
+        <!--jQuery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery Mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jQuery Mobile stylesheet-->
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+        <!--our scripts-->
+        <script src="js/myscript.js"></script>
+        <!--our styles-->
+        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="icon" href="img/HJK-image.png">
+
+    </head>
+    <body>
+        <div id="HJKHomePage" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>HJK Feedback A1</h1>
+                <!-- Navigation bar -->
+                <div data-role="navbar" data-icompos="top" >
+                    <ul id="navBar1">
+                        <li>
+                            <a href="#HJKHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
+                        </li>
+                        <li>
+                            <a href="#HJKAddFeedbackPage" data-icon="plus">Add</a>
+                        </li>
+                        <li>
+                            <a href="#HJKViewFeedbackPage" data-icon="grid">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#HJKSettingsPage" data-icon="gear">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <!-- main page -->
+                <h1>Hyunjin Kim's Feedback A1 App</h1>
+                <p>Welcome to the Hyunjin Kim's Feedback A1 app.
+                    A prototype designed for mobile programming class. This is the first iteration of the app to keep track of different places you visited along with your reviews.</p>
+                <img src="img/cat.jpg" class="center-image"/>
+                <P>Please feel free to contact me if you have any suggestions!</P>
+                <a href="#" data-role="button" data-icon="plus">Call: 226-123-1234</a>
+                <a href="#" data-role="button" data-icon="plus">Hkim1595@conestogac.on.ca</a>
+                <span>Website:</span>
+                <a href="#" data-role="button" data-icon="plus">Conestoga College</a>
+            </section>
+
+            <!-- footer -->
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; 2023 Hyunjin Kim </h1>
+            </footer>
+
+        </div>
+
+    <!-- add feedback page -->
+        <div id="HJKAddFeedbackPage" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Add a Feedback</h1>
+                <!-- Navigation bar -->
+                <div data-role="navbar" data-icompos="top" >
+                    <ul id="navBar2">
+                        <li>
+                            <a href="#HJKHomePage" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#HJKAddFeedbackPage" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a>
+                        </li>
+                        <li>
+                            <a href="#HJKViewFeedbackPage" data-icon="grid">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#HJKSettingsPage" data-icon="gear">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <!-- form -->
+                <form id="form-feedback" name="form-feedback">
+                    <label for="businessName">Business Name:</label><br>
+                    <input type="text" id="businessName" name="businessName"><br>
+
+                    <label for="email">Reviewer Email:</label><br>
+                    <input type="text" id="email" name="email">
+
+                    <label for="comment">Reviewer Comments:</label><br>
+                    <textarea id="comment" name="comment"></textarea>
+
+                    <label for="rating">Overall Ratings(1-100):</label><br>
+                    <input type="text" id="rating" name="rating">
+                </form>
+                <button type="submit" form="form-feedback" class="ui-btn-active" data-inline="true" value="Submit" id="addFeedbackBtn" name="addFeedbackBtn">Save</button>
+            </section>
+
+            <!-- footer -->
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; 2023 Hyunjin Kim </h1>
+            </footer>
+
+        </div>
+
+        <!-- add feedback page -->
+        <div id="HJKViewFeedbackPage" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>List of Reviews</h1>
+                <!-- navigation bar -->
+                <div data-role="navbar" data-icompos="top" >
+                    <ul id="navBar3">
+                        <li>
+                            <a href="#HJKHomePage" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#HJKAddFeedbackPage" data-icon="plus">Add</a>
+                        </li>
+                        <li>
+                            <a href="#HJKViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#HJKSettingsPage" data-icon="gear">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!-- view feedback -->
+            <section data-role="content">
+                <ul data-role="listview" data-inset="true" data-icon="false" id="ReviewList">
+                    <li><a href="#HJKModifyFeedbackPage1">
+                        <h1>Business Name: Capybara</h1>
+                        <p>Reviewer email: hjk@spy.com</p>
+                        <p>Comments: You pulled up!</p>
+                        <p>Overall Rating: 100%</p>
+                    </a></li>
+
+                    <li><a href="#HJKModifyFeedbackPage2">
+                        <h1>Business Name: Hamster House</h1>
+                        <p>Reviewer email: hjk@spy.com</p>
+                        <p>Comments: Nice treadmills!</p>
+                        <p>Overall Rating: 92%</p>
+                    </a></li>
+                </ul>
+            </section>
+
+            <!-- footer -->
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; 2023 Hyunjin Kim </h1>
+            </footer>
+
+        </div>
+
+        <!-- modify reviews 1 -->
+        <div id="HJKModifyFeedbackPage1" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Modify Feedback</h1>
+                <!-- navigation bar -->
+                <div data-role="navbar" data-icompos="top" >
+                    <ul id="navBar4">
+                        <li>
+                            <a href="#HJKHomePage" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#HJKAddFeedbackPage" data-icon="plus">Add</a>
+                        </li>
+                        <li>
+                            <a href="#HJKViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#HJKSettingsPage" data-icon="gear">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <!-- form -->
+                <form id="form-modify-feedback1" name="form-feedback">
+                    <label for="changeName">Business Name:</label><br>
+                    <input type="text" id="changeName" name="changeName" value="Capybara"><br>
+
+                    <label for="changeEmail">Reviewer Email:</label><br>
+                    <input type="text" id="changeEmail" name="changeEmail" value="hjk@spy.com">
+
+                    <label for="changeComment">Reviewer Comments:</label><br>
+                    <textarea id="changeComment" name="changeComment">You pulled up!</textarea>
+
+                    <label for="changeRating">Overall Ratings(1-100):</label><br>
+                    <input type="text" id="changeRating" name="changeRating" value="100">
+                </form>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                <button type="reset" form="form-modify-feedback1" data-inline="true" id="cancelUpdateFeedbackBtn" name="cancelUpdateFeedbackBtn">Cancel</button>
+                <button type="" form="form-modify-feedback1" data-theme="b" data-inline="true" value="Submit" id="deleteUpdateFeedbackBtn" name="deleteUpdateFeedbackBtn">Delete</button>
+                <button type="submit" form="form-modify-feedback1" class="ui-btn-active" data-inline="true" value="Submit" id="updateFeedbackBtn" name="updateFeedbackBtn">Update</button>
+                </fieldset>
+            </section>
+
+            <!-- footer -->
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; 2023 Hyunjin Kim </h1>
+            </footer>
+
+        </div>
+
+        <!-- modify reviews 2 -->
+        <div id="HJKModifyFeedbackPage2" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Modify Feedback</h1>
+                <!-- navigation bar -->
+                <div data-role="navbar" data-icompos="top" >
+                    <ul id="navBar5">
+                        <li>
+                            <a href="#HJKHomePage" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#HJKAddFeedbackPage" data-icon="plus">Add</a>
+                        </li>
+                        <li>
+                            <a href="#HJKViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#HJKSettingsPage" data-icon="gear">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <!-- form -->
+                <form id="form-modify-feedback2" name="form-feedback">
+                    <label for="changeName2">Business Name:</label><br>
+                    <input type="text" id="changeName2" name="changeName2" value="Hamster House"><br>
+
+                    <label for="changeEmail2">Reviewer Email:</label><br>
+                    <input type="text" id="changeEmail2" name="changeEmail"2 value="hjk@spy.com">
+
+                    <label for="changeComment2">Reviewer Comments:</label><br>
+                    <textarea id="changeComment2" name="changeComment2">Nice treadmills!</textarea>
+
+                    <label for="changeRating2">Overall Ratings(1-100):</label><br>
+                    <input type="text" id="changeRating2" name="changeRating2" value="92">
+                </form>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <button type="reset" form="form-modify-feedback1" data-inline="true" id="cancelUpdateFeedbackBtn2" name="cancelUpdateFeedbackBtn2">Cancel</button>
+                    <button type="" form="form-modify-feedback1" data-theme="b" data-inline="true" value="Submit" id="deleteUpdateFeedbackBtn2" name="deleteUpdateFeedbackBtn2">Delete</button>
+                    <button type="submit" form="form-modify-feedback1" class="ui-btn-active" data-inline="true" value="Submit" id="updateFeedbackBtn2" name="updateFeedbackBtn2">Update</button>
+                </fieldset>
+            </section>
+
+            <!-- footer -->
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; 2023 Hyunjin Kim </h1>
+            </footer>
+
+        </div>
+
+        <!-- settings -->
+        <div id="HJKSettingsPage" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Settings</h1>
+                <!-- navigation bar -->
+                <div data-role="navbar" data-icompos="top" >
+                    <ul id="navBar6">
+                        <li>
+                            <a href="#HJKHomePage" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#HJKAddFeedbackPage" data-icon="plus">Add</a>
+                        </li>
+                        <li>
+                            <a href="#HJKViewFeedbackPage" data-icon="grid">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#HJKSettingsPage" data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <!-- form -->
+                <form id="form-defaultMail" name="form-feedback">
+                    <label for="businessName">Default reviewer Email:</label><br>
+                    <input type="text" id="defaultEmail" name="businessName"><br>
+                </form>
+                <button type="submit" form="form-defaultMail" class="ui-btn-active" value="Submit" id="defaultEmailSubmitBtn" name="defaultEmailSubmitBtn">Save Defaults</button>
+                <button type="submit" form="form-defaultMail" data-theme="b" value="Submit" id="defaultEmailClearBtn" name="defaultEmailClearBtn">Clear Database</button>
+            </section>
+
+            <!-- footer -->
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; 2023 Hyunjin Kim </h1>
+            </footer>
+
+        </div>
+    </body>
+</html>
